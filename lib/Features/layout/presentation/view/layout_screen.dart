@@ -15,13 +15,27 @@ class LayoutScreen extends StatelessWidget {
   static const String routeName = "LayoutScreen";
 
   final List<Widget> tabs = [
-    const HomeView(),
-    const TrainerView(),
-    const PlansView(),
-    const FavoriteView(),
-    const ProfileView(),
+    Container(
+      color: AppColors.primary,
+      child: const HomeView(),
+    ),
+    Container(
+      color: Colors.lightBlue.shade50,
+      child: const TrainerView(),
+    ),
+    Container(
+      color: AppColors.primary,
+      child: const PlansView(),
+    ),
+    Container(
+      color: AppColors.primary,
+      child: const FavoriteView(),
+    ),
+    Container(
+      color: AppColors.primary,
+      child: const ProfileView(),
+    ),
   ];
-
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -31,10 +45,11 @@ class LayoutScreen extends StatelessWidget {
           var cubit = BlocProvider.of<NavBarCubit>(context);
           return Scaffold(
             appBar: AppBar(
+              elevation: 1,
               leading: const Icon(Icons.account_circle_outlined, color: AppColors.accent,),
               title: const Text("IronPulse", style: AppTheme.appBarTitleTextStyle,),
               actions: [
-                IconButton(onPressed: (){}, icon: Icon(Icons.notifications, color: Colors.grey,size: 32,))
+                IconButton(onPressed: (){}, icon: const Icon(Icons.notifications, color: Colors.grey,size: 32,))
               ],
             ),
             body: SafeArea(
