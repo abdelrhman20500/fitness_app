@@ -1,0 +1,60 @@
+import 'package:fitness_app/Core/utlis/app_theme.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fitness_app/Features/favorite/presentation/view/favorite_view.dart';
+import 'package:fitness_app/Features/home/presentation/view/home_view.dart';
+import 'package:fitness_app/Features/plans/presentation/view/plans_view.dart';
+import 'package:fitness_app/Features/profile/presentation/view/profile_view.dart';
+import 'package:fitness_app/Features/trainer/presentation/view/trainer_view.dart';
+import '../../../../Core/utlis/app_color.dart';
+import '../view_manager/nav_bar_cubit.dart';
+import '../view_manager/nav_bar_state.dart';
+
+class LayoutScreen extends StatelessWidget {
+  LayoutScreen({super.key});
+  static const String routeName = "LayoutScreen";
+
+  final List<Widget> tabs = [
+    const HomeView(),
+    const TrainerView(),
+    const PlansView(),
+    const FavoriteView(),
+    const ProfileView(),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => NavBarCubit(),
+      child: BlocBuilder<NavBarCubit, NavBarState>(
+        builder: (context, state) {
+          var cubit = BlocProvider.of<NavBarCubit>(context);
+          return Scaffold(
+            appBar: AppBar(
+              leading: const Icon(Icons.account_circle_outlined, color: AppColors.accent,),
+              title: const Text("IronPulse", style: AppTheme.appBarTitleTextStyle,),
+              actions: [
+                IconButton(onPressed: (){}, icon: Icon(Icons.notifications, color: Colors.grey,size: 32,))
+              ],
+            ),
+            body: SafeArea(
+              child: tabs[cubit.currentIndex],
+            ),
+            bottomNavigationBar: BottomNavigationBar(
+              type: BottomNavigationBarType.fixed,
+              currentIndex: cubit.currentIndex,
+              onTap: (index) => cubit.changeIndex(index),
+              items: const [
+                BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+                BottomNavigationBarItem(icon: Icon(Icons.train_outlined), label: "Trainer"),
+                BottomNavigationBarItem(icon: Icon(Icons.next_plan_sharp), label: "Plans"),
+                BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "Favorite"),
+                BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+              ],
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
