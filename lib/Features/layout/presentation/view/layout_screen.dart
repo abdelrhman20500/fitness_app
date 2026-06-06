@@ -20,7 +20,7 @@ class LayoutScreen extends StatelessWidget {
       child: const HomeView(),
     ),
     Container(
-      color: Colors.lightBlue.shade50,
+      color: AppColors.primary,
       child: const TrainerView(),
     ),
     Container(
@@ -46,7 +46,7 @@ class LayoutScreen extends StatelessWidget {
           return Scaffold(
             appBar: AppBar(
               elevation: 1,
-              leading: const Icon(Icons.account_circle_outlined, color: AppColors.accent,),
+              leading: const Icon(Icons.electric_bolt,size: 28, color: AppColors.accent,),
               title: const Text("IronPulse", style: AppTheme.appBarTitleTextStyle,),
               actions: [
                 IconButton(onPressed: (){}, icon: const Icon(Icons.notifications, color: Colors.grey,size: 32,))
