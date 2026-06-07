@@ -60,11 +60,11 @@ class LayoutScreen extends StatelessWidget {
               currentIndex: cubit.currentIndex,
               onTap: (index) => cubit.changeIndex(index),
               items: const [
-                BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-                BottomNavigationBarItem(icon: Icon(Icons.train_outlined), label: "Trainer"),
-                BottomNavigationBarItem(icon: Icon(Icons.next_plan_sharp), label: "Plans"),
-                BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "Favorite"),
-                BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+                BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: "Home"),
+                BottomNavigationBarItem(icon: Icon(Icons.fitness_center_outlined), label: "Trainer"),
+                BottomNavigationBarItem(icon: Icon(Icons.assignment_rounded), label: "Plans"),
+                BottomNavigationBarItem(icon: Icon(Icons.favorite_border), label: "Favorite"),
+                BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: "Profile"),
               ],
             ),
           );
