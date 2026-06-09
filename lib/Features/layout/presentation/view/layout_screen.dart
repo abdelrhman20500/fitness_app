@@ -1,12 +1,11 @@
-import 'package:fitness_app/Core/utlis/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fitness_app/Features/favorite/presentation/view/favorite_view.dart';
-import 'package:fitness_app/Features/home/presentation/view/home_view.dart';
 import 'package:fitness_app/Features/plans/presentation/view/plans_view.dart';
 import 'package:fitness_app/Features/profile/presentation/view/profile_view.dart';
 import 'package:fitness_app/Features/trainer/presentation/view/trainer_view.dart';
-import '../../../../Core/utlis/app_color.dart';
+import '../../../../Core/theme/app_color.dart';
+import '../../../../Core/theme/app_theme.dart';
 import '../view_manager/nav_bar_cubit.dart';
 import '../view_manager/nav_bar_state.dart';
 
@@ -15,10 +14,6 @@ class LayoutScreen extends StatelessWidget {
   static const String routeName = "LayoutScreen";
 
   final List<Widget> tabs = [
-    Container(
-      color: AppColors.primary,
-      child: const HomeView(),
-    ),
     Container(
       color: AppColors.primary,
       child: const TrainerView(),
@@ -60,7 +55,6 @@ class LayoutScreen extends StatelessWidget {
               currentIndex: cubit.currentIndex,
               onTap: (index) => cubit.changeIndex(index),
               items: const [
-                BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: "Home"),
                 BottomNavigationBarItem(icon: Icon(Icons.fitness_center_outlined), label: "Trainer"),
                 BottomNavigationBarItem(icon: Icon(Icons.assignment_rounded), label: "Plans"),
                 BottomNavigationBarItem(icon: Icon(Icons.favorite_border), label: "Favorite"),
