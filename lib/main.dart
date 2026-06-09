@@ -1,8 +1,8 @@
-import 'package:fitness_app/Core/utlis/app_theme.dart';
 import 'package:fitness_app/Features/layout/presentation/view/layout_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'Core/Api/simple_bloc_observer.dart';
+import 'Core/theme/app_theme.dart';
 
 void main()async{
   WidgetsFlutterBinding.ensureInitialized();
