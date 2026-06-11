@@ -28,7 +28,7 @@ class LayoutScreen extends StatelessWidget {
     ),
     Container(
       color: AppColors.primary,
-      child: const ProfileView(),
+      child: const ProfileScreen(),
     ),
   ];
   @override
