@@ -1,3 +1,4 @@
+import 'package:fitness_app/Features/favorite/presentation/view_manager/cubit/favorite_cubit.dart';
 import 'package:fitness_app/Features/layout/presentation/view/layout_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,10 +17,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: AppTheme.lightTheme,
-      debugShowCheckedModeBanner: false,
-      home: LayoutScreen()
+    return BlocProvider(
+      create: (context) => FavoriteCubit()..loadFavorites(),
+      child: MaterialApp(
+        theme: AppTheme.lightTheme,
+        debugShowCheckedModeBanner: false,
+        home: LayoutScreen()
+      ),
     );
   }
 }

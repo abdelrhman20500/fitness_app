@@ -54,18 +54,8 @@ class TrainerItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(title,style: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold, color: Colors.white,),
-                        maxLines: 1,overflow: TextOverflow.ellipsis,),
-                      CircleAvatar(
-                        radius: 20,
-                          backgroundColor: Colors.grey,
-                          child: IconButton(onPressed: (){}, icon:const Icon(Icons.favorite_border,
-                            color: Colors.blue, size: 22,))),
-                    ],
-                  ),
+                  Text(title,style: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold, color: Colors.white,),
+                    maxLines: 1,overflow: TextOverflow.ellipsis,),
                       Text(specialty,
                     style: const TextStyle(fontSize: 16, color: Colors.grey,),
                     maxLines: 2,overflow: TextOverflow.ellipsis,),

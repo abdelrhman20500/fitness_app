@@ -1,9 +1,9 @@
+import 'package:fitness_app/Features/favorite/presentation/view/widget/favorite_item.dart';
 import 'package:fitness_app/Features/plans/data/model/plans_model.dart';
-import 'package:fitness_app/Features/plans/presentation/view/widget/plans_item.dart';
 import 'package:flutter/material.dart';
 
-class PlansListView extends StatelessWidget {
-  const PlansListView({super.key, required this.model});
+class FavoriteListView extends StatelessWidget {
+  const FavoriteListView({super.key, required this.model});
   final List<PlansModel> model;
   @override
   Widget build(BuildContext context) {
@@ -12,8 +12,8 @@ class PlansListView extends StatelessWidget {
             (context, index) {
           return Padding(
             padding: const EdgeInsets.all(8.0),
-            child: PlansItem(
-              plans: model[index],
+            child: FavoriteItem(
+              plan: model[index],
               title: model[index].name!,
               id: model[index].id!,
               imageUrl: model[index].image!,
