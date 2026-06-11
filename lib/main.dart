@@ -1,4 +1,5 @@
-import 'package:fitness_app/Core/utlis/app_theme.dart';
+import 'package:fitness_app/Features/favorite/presentation/view_manager/cubit/favorite_cubit.dart';
+import 'package:fitness_app/Features/layout/presentation/view/layout_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
