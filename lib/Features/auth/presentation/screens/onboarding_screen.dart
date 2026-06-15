@@ -1,6 +1,5 @@
-import 'package:fitness_app/Core/utlis/app_color.dart';
 import 'package:flutter/material.dart';
-
+import '../../../../Core/theme/app_color.dart';
 import '../widgets/CustomButton.dart';
 import 'login_screen.dart';
 
@@ -13,7 +12,7 @@ class WelcomeOnboardingScreen extends StatelessWidget {
       backgroundColor: AppColors.primary,
       body: SafeArea(
         child: Column(
-          children: [
+          children:[
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
               child: Row(
